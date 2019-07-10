@@ -1,4 +1,28 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+  <div class = "search-box">
+    <input class="search-txt" type = "text" name="" placeholder="Type to search">
+    <a class="search-btn" href="#">
+    </a>
+  </div>
+  <div></div>
+  <div class="horizontal-divider"> </div>
+
+	<mat-divider></mat-divider>
+
+	<div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="15px">
+
+		<mat-card fxFlex>
+
+			<mat-card-content fxLayout="column">
+			<ng-material2-facet-search [source]="facets" (searchUpdated)="filterUpdated($event)" [chipLabelsEnabled]="chipLabelsEnabled"
+			 [confirmOnRemove]="confirmOnRemove" [clearButtonEnabled]="clearButtonEnabled" placeholder="Add a filter..." clearButtonText="CLEAR FILTERS">
+			</ng-material2-facet-search>
+      </mat-card-content>
+
+		</mat-card>
+		<mat-card fxFlex>
+			<mat-card-title>Results</mat-card-title>
+			<mat-card-content>
+				<pre style="font-family:monospace; font-size:small">{{selectedFacets | json }}</pre>
+			</mat-card-content>
+		</mat-card>
+	</div>

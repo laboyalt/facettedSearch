@@ -1,0 +1,29 @@
+<div class="panel panel-primary" *ngFor="let client of clients |clientFilter:searchTerm">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{client.cs_request_id}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="col-xs-6">
+      Type: {{client.request_type}}
+  </div>
+  <div class="panel-body">
+    <div class="col-xs-6">
+      Category: {{client.request_category}}
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="col-xs-6">
+      Status: {{client.request_status}}
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="col-xs-6">
+      Due Date: {{client.due_date}}
+    </div>
+  </div>
+  <div class="panel-body">
+    <div class="col-xs-6">
+      Created By: {{client.created_by}}
+    </div>
+  </div>
+</div>

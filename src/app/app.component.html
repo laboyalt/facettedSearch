@@ -1,5 +1,5 @@
   <div class = "search-box">
-    <input class="search-txt" type = "text" name="" placeholder="Type to search">
+    <input class="search-txt" type = "text" placeholder="Type to search" [(ngModel)]="searchTerm">
     <a class="search-btn" href="#">
     </a>
   </div>
@@ -7,7 +7,6 @@
   <div class="horizontal-divider"> </div>
 
 	<mat-divider></mat-divider>
-
 	<div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="15px">
 
 		<mat-card fxFlex>
@@ -24,5 +23,7 @@
 			<mat-card-content>
 				<pre style="font-family:monospace; font-size:small">{{selectedFacets | json }}</pre>
 			</mat-card-content>
+      <app-list-clients></app-list-clients>
+
 		</mat-card>
 	</div>

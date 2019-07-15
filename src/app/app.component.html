@@ -1,5 +1,5 @@
   <div class = "search-box">
-    <input class="search-txt" type = "text" placeholder="Type to search" [(ngModel)]="searchTerm">
+    <input class="search-txt" type = "text" name="search" placeholder="Type to search" [(ngModel)]="searchText" autocomplete="off" >
     <a class="search-btn" href="#">
     </a>
   </div>
@@ -18,12 +18,39 @@
       </mat-card-content>
 
 		</mat-card>
+    
 		<mat-card fxFlex>
 			<mat-card-title>Results</mat-card-title>
-      <app-list-clients></app-list-clients>
+      <div class="panel panel-primary" *ngFor="let client of clients |filter:searchText">
+        <div class="panel-heading" >
+          <h3 class="panel-title">{{client.cs_request_id}}</h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-xs-6">
+            Type: {{client.request_type}}
+        </div>
+        <div class="panel-body">
+          <div class="col-xs-6">
+            Category: {{client.request_category}}
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="col-xs-6">
+            Status: {{client.request_status}}
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="col-xs-6">
+            Due Date: {{client.due_date}}
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="col-xs-6">
+            Created By: {{client.created_by}}
+          </div>
+        </div>
+      </div>
 			<mat-card-content>
-				<pre style="font-family:monospace; font-size:small">{{selectedFacets | json }}</pre>
-			</mat-card-content>
 
-		</mat-card>
+			</mat-card-content>
 	</div>

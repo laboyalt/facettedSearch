@@ -1,5 +1,5 @@
-<div class="panel panel-primary" *ngFor="let client of clients |clientFilter:searchTerm">
-  <div class="panel-heading">
+<div class="panel panel-primary" *ngFor="let client of clients |filter:searchText">
+  <div class="panel-heading" >
     <h3 class="panel-title">{{client.cs_request_id}}</h3>
   </div>
   <div class="panel-body">

@@ -10,6 +10,7 @@ import{HttpClientModule} from '@angular/common/http';
 import{ClientFilterPipe} from './clients/client-filter.pipe';
 import {ListClientsComponent} from './clients/list-clients.component';
 import{ClientsService} from './clients/client.service';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import{ClientsService} from './clients/client.service';
     FormsModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
+    Ng2SearchPipeModule,
     MatCardModule,
     MatDividerModule,
     MatCheckboxModule,

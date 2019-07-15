@@ -21,7 +21,7 @@
     
 		<mat-card fxFlex>
 			<mat-card-title>Results</mat-card-title>
-      <div class="panel panel-primary" *ngFor="let client of clients |filter:searchText">
+      <div class="profile-card-wrap" *ngFor="let client of clients |filter:searchText">
         <div class="panel-heading" >
           <h3 class="panel-title">{{client.cs_request_id}}</h3>
         </div>

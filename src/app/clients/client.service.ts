@@ -5,11 +5,11 @@ import{Observable} from "rxjs/Observable";
 
 @Injectable()
 export class ClientsService{
-  private url: string = "src/app/clients.json";
+  private _url: string = "/app/assets/clients.json";
     constructor(private http : HttpClient){
 
     }
     getClients() : Observable<Client[]>{
-      return this.http.get<Client[]>(this.url);
+      return this.http.get<Client[]>(this._url);
     }
 }

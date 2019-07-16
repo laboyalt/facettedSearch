@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Facet, FacetDataType } from 'ng-material2-facet-search';
 import { of, } from 'rxjs';
-import { Client } from '../app/models/client.model';
-import { ClientsService } from '../app/clients/client.service.ts';
+import {Client} from '../app/models/client';
+import { ClientsService } from '../app/clients/client.service';
 import { delay } from 'rxjs/operators';
+import * as jsonData from "./clients.json";
 
 
 @Component({
@@ -116,14 +117,13 @@ export class AppComponent implements OnInit {
   public clearButtonEnabled = true;
   public confirmOnRemove = true;
 
-  public clients = [];
+  public client = [];
   constructor(private clientService: ClientsService) {
 
   }
 
   ngOnInit() {
-    this.clientService.getClients().subscribe(data => this.clients = data);
-
+    return this.clientService.getClients().subscribe((data: any): void => {this.client = data;});
   }
 
   // you can use an event method like this to trigger your filtering logic.
